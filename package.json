@@ -1,7 +1,10 @@
 {
   "name": "nuxt-blog-start",
   "scripts": {
-    "dev": "nuxt"
+    "dev": "nuxt",
+    "build": "nuxt build -y",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
   },
   "dependencies": {
     "nuxt": "^2.14.1"
