@@ -1,5 +1,6 @@
 {
   "name": "nuxt-blog-start",
+  "description": "silite's blog by nuxt",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build -y",
@@ -7,6 +8,11 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt": "^2.14.1"
+    "@nuxtjs/axios": "^5.12.1",
+    "nuxt": "^2.14.1",
+    "vue-blu": "^0.1.9"
+  },
+  "devDependencies": {
+    "eslint": "^7.7.0"
   }
 }
