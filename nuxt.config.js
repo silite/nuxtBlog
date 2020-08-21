@@ -10,7 +10,7 @@ module.exports = {
   // ],
 
   head: {
-    title: '',
+    title: 'silite',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -27,7 +27,7 @@ module.exports = {
   ],
 
   plugins: [
-    { src: '@/plugins/VueBlu-ui', ssr: false }
+    { src: '@/plugins/vuikit-ui', ssr: false }
   ],
 
   router: {
