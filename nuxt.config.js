@@ -26,7 +26,9 @@ module.exports = {
     '@nuxtjs/axios'
   ],
 
-  plugins: [],
+  plugins: [
+    { src: '@/plugins/VueBlu-ui', ssr: false }
+  ],
 
   router: {
     middleware: 'route'

@@ -1,3 +1,6 @@
 <template>
-  <div>text2</div>
+  <tag type="primary">Tag Primary</tag>
 </template>
+
+<script>
+</script>
