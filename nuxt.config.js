@@ -1,4 +1,5 @@
 const pkg = require('./package')
+const path = require('path')
 
 module.exports = {
   server: {
@@ -24,7 +25,7 @@ module.exports = {
 
   modules: ['@nuxtjs/axios'],
 
-  plugins: ['@/plugins/composition-api'],
+  plugins: ['@/plugins/composition-api', '@/plugins/global'],
 
   router: {
     middleware: 'route',
@@ -51,6 +52,17 @@ module.exports = {
         })
 
         config.devtool = 'source-map'
+      }
+
+      // extend webpack alias
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        ...{
+          types: path.resolve(__dirname, 'types'),
+          utils: path.resolve(__dirname, 'utils'),
+          store: path.resolve(__dirname, 'store'),
+          components: path.resolve(__dirname, 'components'),
+        },
       }
     },
   },
