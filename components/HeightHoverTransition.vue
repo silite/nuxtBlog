@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <slot />
+  <div class="trigger">
+    <slot name="trigger" />
+    <div class="el">
+      <slot name="el" />
+    </div>
   </div>
 </template>
 
@@ -11,4 +14,13 @@ export default defineComponent({
 })
 </script>
 
-<style scoped></style>
+<style lang="less" scoped>
+.el {
+  transition: max-height 0.5s;
+  overflow: hidden;
+  max-height: 0;
+}
+.trigger:hover > .el {
+  max-height: 50px;
+}
+</style>

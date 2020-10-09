@@ -1,6 +1,15 @@
 <template>
   <div>
-    <height-hover-transition> fsdf </height-hover-transition>
+    <height-hover-transition>
+      <div
+        style="text-align: center; background: #47494e"
+        slot="trigger">
+        fff
+      </div>
+      <div slot="el">
+        fsddfsdf
+      </div>
+    </height-hover-transition>
     <nuxt></nuxt>
   </div>
 </template>

@@ -17,7 +17,6 @@ module.exports = {
   extends: [
     'plugin:vue/strongly-recommended',
     'standard',
-    'plugin:prettier/recommended',
   ],
 
   plugins: ['vue', 'prettier'],
@@ -40,6 +39,7 @@ module.exports = {
     'vue/attribute-hyphenation': 2,
     'vue/mustache-interpolation-spacing': ['error', 'always'],
     'vue/singleline-html-element-content-newline': 2,
+    'space-before-function-paren': ['error', 'never'],
     'vue/html-self-closing': [
       'error',
       {

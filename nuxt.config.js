@@ -33,8 +33,11 @@ module.exports = {
 
   build: {
     loaders: {
-      less: {
-        javascriptEnabled: true,
+      loader: 'less-loader',
+      options: {
+        lessOptions: {
+          javascriptEnabled: true,
+        },
       },
     },
 
