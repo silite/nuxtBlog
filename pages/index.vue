@@ -11,9 +11,9 @@ const test = ref('ffff')
 export default defineComponent({
   setup() {
     return {
-      test
+      test,
     }
-  }
+  },
 })
 </script>
 

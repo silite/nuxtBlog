@@ -2,7 +2,7 @@ const pkg = require('./package')
 
 module.exports = {
   server: {
-    port: 12449
+    port: 12449,
   },
 
   // css: [
@@ -14,8 +14,8 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
-    ]
+      { hid: 'description', name: 'description', content: pkg.description },
+    ],
     // link: [{ rel: 'icon', type: 'image/x-icon', href: `@/static/xxx` }],
     // script: [{ src: '' }]
   },
@@ -27,14 +27,14 @@ module.exports = {
   plugins: ['@/plugins/composition-api'],
 
   router: {
-    middleware: 'route'
+    middleware: 'route',
   },
 
   build: {
     loaders: {
       less: {
-        javascriptEnabled: true
-      }
+        javascriptEnabled: true,
+      },
     },
 
     /*
@@ -47,11 +47,11 @@ module.exports = {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
         })
 
         config.devtool = 'source-map'
       }
-    }
-  }
+    },
+  },
 }

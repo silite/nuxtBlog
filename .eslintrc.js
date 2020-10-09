@@ -3,11 +3,11 @@ module.exports = {
 
   env: {
     browser: true,
-    node: true
+    node: true,
   },
 
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
   },
 
   globals: {
@@ -17,7 +17,7 @@ module.exports = {
   extends: [
     'plugin:vue/strongly-recommended',
     'standard',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
   ],
 
   plugins: ['vue', 'prettier'],
@@ -46,17 +46,17 @@ module.exports = {
         html: {
           void: 'never',
           normal: 'always',
-          component: 'never'
+          component: 'never',
         },
         svg: 'always',
-        math: 'always'
-      }
+        math: 'always',
+      },
     ],
     'vue/html-closing-bracket-newline': [
       'error',
       {
-        multiline: 'never'
-      }
+        multiline: 'never',
+      },
     ],
     'vue/max-attributes-per-line': [
       'error',
@@ -64,17 +64,17 @@ module.exports = {
         singleline: 1,
         multiline: {
           max: 1,
-          allowFirstLine: false
-        }
-      }
+          allowFirstLine: false,
+        },
+      },
     ],
     'vue/component-name-in-template-casing': [
       'error',
       'kebab-case',
       {
         registeredComponentsOnly: false,
-        ignores: []
-      }
-    ]
-  }
+        ignores: [],
+      },
+    ],
+  },
 }
