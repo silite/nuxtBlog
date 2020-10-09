@@ -1,17 +1,20 @@
 <template>
   <div>
-    test
+    {{ test }}
   </div>
 </template>
 
 <script>
-export default {
-  data() {
+import { defineComponent, ref } from '@vue/composition-api'
+
+const test = ref('ffff')
+export default defineComponent({
+  setup() {
     return {
-      show1: false
+      test
     }
   }
-}
+})
 </script>
 
 <style lang="less" scoped>

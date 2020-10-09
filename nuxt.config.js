@@ -26,7 +26,9 @@ module.exports = {
     '@nuxtjs/axios'
   ],
 
-  plugins: [],
+  plugins: [
+    '@/plugins/composition-api'
+  ],
 
   router: {
     middleware: 'route'
