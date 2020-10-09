@@ -1,15 +1,18 @@
 <template>
   <div>
-    <vk-button
-      class="tmp">中文测试</vk-button>
+    test
   </div>
 </template>
 
 <script>
+export default {
+  data() {
+    return {
+      show1: false
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>
-.tmp {
-  color: red;
-}
 </style>

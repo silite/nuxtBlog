@@ -23,18 +23,10 @@ module.exports = {
   loading: false,
 
   modules: [
-    '@nuxtjs/axios',
-    'nuxt-vuikit'
+    '@nuxtjs/axios'
   ],
 
-  vuikit: {
-    defaultTheme: true,
-    icons: true
-  },
-
-  plugins: [
-    { src: '@/plugins/vuikit-ui', ssr: false }
-  ],
+  plugins: [],
 
   router: {
     middleware: 'route'
