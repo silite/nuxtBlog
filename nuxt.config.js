@@ -21,6 +21,10 @@ module.exports = {
     // script: [{ src: '' }]
   },
 
+  css: [
+    '@/assets/style/main.less'
+  ],
+
   loading: false,
 
   modules: ['@nuxtjs/axios'],
