@@ -1,14 +1,14 @@
 <template>
   <div>
-    <div style="background: #eeeeee; height: 50px;">
-      fsdf
-      <span style="float: right">fsdf</span>
+    <div class="el">
+      fdsfsdf
     </div>
     <nuxt></nuxt>
   </div>
 </template>
 
 <script>
+import anime from 'animejs'
 import { defineComponent } from '@vue/composition-api'
 import HeightHoverTransition from 'components/HeightHoverTransition'
 export default defineComponent({
@@ -16,8 +16,19 @@ export default defineComponent({
     HeightHoverTransition,
   },
 
-  setup() {},
+  setup() {
+    if (process.browser) {
+      anime({
+        targets: '.el',
+        translateY: 10,
+        rotate: '1turn',
+        duration: 800
+      })
+    }
+  },
 })
 </script>
 
-<style scoped></style>
+<style lang="less" scoped>
+
+</style>
