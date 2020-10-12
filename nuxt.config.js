@@ -29,7 +29,9 @@ module.exports = {
 
   modules: ['@nuxtjs/axios'],
 
-  plugins: ['@/plugins/composition-api', '@/plugins/global', '@/plugins/animejs'],
+  plugins: ['@/plugins/composition-api', '@/plugins/global', '@/plugins/animejs', {
+    src: '@/plugins/md', ssr: false
+  }],
 
   router: {
     middleware: 'route',
