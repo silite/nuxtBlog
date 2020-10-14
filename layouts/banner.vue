@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="el">
+    <div
+      class="el"
+      @click="testOne">
       fdsfsdf
     </div>
     <nuxt></nuxt>
@@ -13,7 +15,7 @@ import { defineComponent } from '@vue/composition-api'
 import HeightHoverTransition from 'components/HeightHoverTransition'
 export default defineComponent({
   components: {
-    HeightHoverTransition,
+    HeightHoverTransition
   },
 
   setup() {
@@ -24,6 +26,19 @@ export default defineComponent({
         rotate: '1turn',
         duration: 800
       })
+    }
+
+    //
+    // function scrollHandle(evt) {
+    //   console.log(evt)
+    // }
+    //
+    function testOne() {
+      console.log('fsdf')
+    }
+    //
+    return {
+      testOne
     }
   },
 })
