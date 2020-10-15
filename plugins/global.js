@@ -1,5 +1,9 @@
 global.mixin = {
-  layout() {
-    return 'banner'
-  },
+  layout: getLayout('banner')
+}
+
+function getLayout(name) {
+  return function layout() {
+    return `${name}`
+  }
 }

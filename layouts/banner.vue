@@ -5,6 +5,7 @@
       @click="testOne">
       fdsfsdf
     </div>
+    <scroll-bar></scroll-bar>
     <nuxt></nuxt>
   </div>
 </template>
@@ -13,9 +14,11 @@
 import anime from 'animejs'
 import { defineComponent } from '@vue/composition-api'
 import HeightHoverTransition from 'components/HeightHoverTransition'
+import scrollBar from 'components/scroll'
 export default defineComponent({
   components: {
-    HeightHoverTransition
+    HeightHoverTransition,
+    scrollBar
   },
 
   setup() {
