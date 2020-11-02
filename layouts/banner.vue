@@ -6,31 +6,24 @@
       fdsfsdf
     </div>
     <scroll-bar></scroll-bar>
+    <anime-demo></anime-demo>
     <nuxt></nuxt>
   </div>
 </template>
 
 <script>
-import anime from 'animejs'
 import { defineComponent } from '@vue/composition-api'
 import HeightHoverTransition from 'components/HeightHoverTransition'
 import scrollBar from 'components/scroll'
+import animeDemo from '../components/animeDemo'
 export default defineComponent({
   components: {
     HeightHoverTransition,
-    scrollBar
+    scrollBar,
+    animeDemo
   },
 
   setup() {
-    if (process.browser) {
-      anime({
-        targets: '.el',
-        translateY: 10,
-        rotate: '1turn',
-        duration: 800
-      })
-    }
-
     //
     // function scrollHandle(evt) {
     //   console.log(evt)

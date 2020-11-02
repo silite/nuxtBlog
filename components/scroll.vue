@@ -14,7 +14,6 @@ export default defineComponent({
     const style = ref()
 
     watch(() => $store.state.scrollBarOption, (newVal, lastVal) => {
-      debugger
       // 待优化
       const { handleOffset, handleLengthRatio, trackLength } = newVal
       const { handleOffset: oldHandleOffset = { y: 0 } } = lastVal
