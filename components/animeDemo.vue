@@ -1,47 +1,250 @@
 <template>
   <div>
-    <svg
-      class="wave-top"
-      width="100"
-      viewBox="0 0 1200 1200">
-      <path
-        id="svg_2"
-        d="m407.5,259.95313c-0.16667,9.68229 -3.33333,20.36458 -3.5,30.04687c-45.33333,-1 -92.66667,-3 -123,-34c-19.66667,-42.66667 -17.33333,-53.33333 7,-92c43.33333,-33 127.66667,-37 122,25c0,53 -128,82 -201,157c-4.66667,-7.33333 -9.33333,-14.66667 -14,-22c63.33333,-64 175.66667,-63 187,-138c3.66667,-38.33333 -41.66667,-32.66667 -72,-11c-20.33333,18.66667 -25.66667,39.33333 4,77c21.83333,18.98438 53.66667,7.96875 93.5,7.95313z"
-        stroke-width="0"
-        stroke="#000"
-        fill="#FF9900" />
-    </svg>
+    <div
+      class="toolbar"
+      id="toolbar">
+      <div class="title">
+        Animography - Mobilo Text Editor
+      </div>
+      <ul class="characters justification">
+        <li class="characters__item characters__item--first left">
+          <button class="characters__item__button" />
+        </li><!--
+        --><li class="characters__item characters__item--middle center">
+        <button class="characters__item__button" />
+        </li><!--
+        --><li class="characters__item characters__item--last right">
+<button class="characters__item__button" />
+</li>
+      </ul>
+      <ul class="characters sizing">
+        <li class="characters__item characters__item--first size1">
+          <button class="characters__item__button" />
+        </li><!--
+        --><li class="characters__item characters__item--middle size2">
+        <button class="characters__item__button" />
+        </li><!--
+        --><li class="characters__item characters__item--last size3">
+<button class="characters__item__button" />
+</li>
+      </ul>
+      <ul class="characters">
+        <li class="characters__item characters__item--color ">
+          <input
+            class="characters__item__colorInput color1"
+            type="color"
+            id="color1">
+        </li><!--
+        --><li class="characters__item characters__item--color">
+        <input
+class="characters__item__colorInput color2"
+type="color"
+id="color2">
+        </li><!--
+        --><li class="characters__item characters__item--color">
+        <input
+class="characters__item__colorInput color3"
+type="color"
+id="color3">
+      </li>
+      </ul>
+    </div>
+    <div class="textBox">
+      <div id="charsContainer" />
+      <div
+        class="bm caret"
+        id="caret">
+        |
+      </div>
+      <input
+        type="text"
+        class="textHelper">
+    </div>
   </div>
 </template>
 
 <script>
-import anime from 'animejs'
+// import anime from 'animejs'
 import { defineComponent } from '@vue/composition-api'
 export default defineComponent({
   setup() {
     if (process.browser) {
-      const wave1 = 'm407.5,259.95313c-0.16667,9.68229 -3.33333,20.36458 -3.5,30.04687c-45.33333,-1 -92.66667,-3 -123,-34c-19.66667,-42.66667 -17.33333,-53.33333 7,-92c43.33333,-33 127.66667,-37 122,25c0,53 -128,82 -201,157c-4.66667,-7.33333 -9.33333,-14.66667 -14,-22c63.33333,-64 175.66667,-63 187,-138c3.66667,-38.33333 -41.66667,-32.66667 -72,-11c-20.33333,18.66667 -25.66667,39.33333 4,77c21.83333,18.98438 53.66667,7.96875 93.5,7.95313z'
-      const wave2 = 'm407.5,259.95313c-0.16667,9.68229 -3.33333,20.36458 -3.5,30.04687c-45.33333,-1 -92.66667,-3 -123,-34c-19.66667,-42.66667 -17.33333,-53.33333 7,-92c43.33333,-33 168.66667,32 225,40c137,19 397,-7 454,24c8.33333,35.66667 -3.33333,24.33333 -21,26c-67.66667,2 -456.33333,-12 -528,-44c-35.33333,-15.33333 -76.66667,-42.66667 -107,-21c-20.33333,18.66667 -26.66667,25.33333 3,63c21.83333,18.98438 53.66667,7.96875 93.5,7.95313z'
 
-      anime({
-        targets: '.wave-top > path',
-        easing: 'easeInOutExpo',
-        duration: 1500,
-        loop: false,
-        d: [
-          { value: [wave1, wave2] }
-        ],
-      })
     }
   }
 })
 </script>
 
 <style scoped>
-  .wave-top {
+  body {
+    background-color: #eee;
+  }
+
+  html,
+  body {
+    margin: 0px;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .toolbar {
+    width: 100%;
+    background: #fff;
+    padding: 4px 10px;
+  }
+
+  .characters {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: top;
+  }
+
+  .characters__item {
+    border: 1px solid #333333;
+    border-radius: 0;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    background-color: #eee;
+  }
+
+  .characters__item--selected {
+    background: #fff;
+  }
+
+  .characters__item--first {
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+  }
+
+  .characters__item--last {
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+  }
+
+  .characters__item--middle {
+    border-left-width: 0;
+    border-right-width: 0;
+  }
+
+  .characters__item--color {
+    border: 0;
+    width: 55px;
+  }
+
+  .characters__item__button {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  .characters__item__colorInput {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .bm {
+    background-color: transparent;
+    width: 100px;
+    height: 120px;
+    display: inline-block;
+    /*float: left;*/
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    vertical-align: top;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .bm.char {
+    pointer-events: none;
+  }
+
+  .bm .hoverer {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
     position: absolute;
     top: 0;
     left: 0;
+  }
+
+  .bm .loader {
+    width: 50%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .bm svg g {
+    pointer-events: auto;
+  }
+
+  .space {
+    position: absolute;
+    transform: translate3d(0, 0, 0);
+    width: 100px;
+    height: 120px;
+    background-color: rgba(255, 0, 0, 0);
+    pointer-events: none;
+  }
+
+  .line-break {
+    height: 120px;
+    width: 0px;
+  }
+
+  .textBox {
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100% - 56px);
     width: 100%;
+  }
+
+  .caret {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #333333;
+    width: 4px;
+    margin-left: -2px;
+    animation: blink-animation 1.5s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1.5s steps(5, start) infinite;
+  }
+
+  .textHelper {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    /*visibility: hidden;*/
+    opacity: 0.01;
+  }
+
+  @keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+
+  @-webkit-keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+
+  .title {
+    float: right;
+    line-height: 2em;
+    transition: ease-in-out;
   }
 </style>
