@@ -1,3 +1,4 @@
+process.env.DEBUG = 'nuxt:*'
 const pkg = require('./package')
 const path = require('path')
 
